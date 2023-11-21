@@ -1,13 +1,13 @@
-@extends('layouts.user')
+@extends('layouts.master')
 
-@section('title', 'Monitoring')
+@section('title', 'KNN')
 
 @section('breadcrumbs')
 <div class="breadcrumbs">
             <div class="col-sm-4">
                 <div class="page-header float-left">
                     <div class="page-title">
-                        <h1>Monitoring Kandang</h1>
+                        <h1>Metode KNN</h1>
                     </div>
                 </div>
             </div>
@@ -15,8 +15,8 @@
                 <div class="page-header float-right">
                     <div class="page-title">
                         <ol class="breadcrumb text-right">
-                            <li><a href="{{ url('home') }}">Home</a></li>
-                            <li class="active">Monitoring Kandang</li>
+                            <li><a href="{{ url('main') }}">Home</a></li>
+                            <li class="active">Metode KNN</li>
                         </ol>
                     </div>
                 </div>
@@ -34,10 +34,11 @@
                     {{ session('status') }}
                 </div>
                 @endif
+                
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
-                        <form action="{{ route('Search') }}" method="GET">
+                        <form action="{{ route('Sorting') }}" method="GET">
                             <div class="row form-group">
                                 <div class="col col-md-12">
                                     <div class="input-group">
@@ -46,7 +47,7 @@
                                             <i class="fa fa-search"></i> Search
                                         </button>
                                         </div>
-                                        <input type="date" name="tanggal" id="tanggal" class="form-control">
+                                        <input type="number" name="k" id="k" class="form-control">
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +58,7 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="pull-left">
-                            <strong>Monitoring Kandang</strong>
+                            <strong>Metode KNN</strong>
                         </div>
                     </div>
                     <div class="card-body table-responsive">
@@ -70,26 +71,21 @@
                                     <th>Kadar Gas Ammonia</th>
                                     <th>Waktu</th>
                                     <th>kelas</th>
-                                    <th>action</th>
+                                    <th>K = {{ $k }}</th>
                                 </tr>   
                             <tread>
                             <tbody>
                                 @foreach($data as $key => $item)
                                 <tr>
-                                <td>{{ $data->firstItem() + $key }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->suhu }} Derajat Celsius</td>
                                 <td>{{ $item->kelembaban }} %</td>
                                 <td>{{ $item->ammonia }} ppm</td>
-                                <td>{{ $item->created_at }}</td>
-                                <td>{{ $item->kelas }}</td>
+                                <td>{{ $umur }}</td>
+                                <td>{{ $kelas[$key] }}</td>
+
                                     <td class="text-center">
-                                        <form action="{{ url('monitoring/destroy/'.$item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Yakin untuk menghapus data ?')">
-                                            @method('delete')
-                                            @csrf
-                                            <button class="btn btn-danger btn-sm">
-                                                <i class="fa fa-trash"></i>
-                                            </button>
-                                        </form>
+                                        
                                     </td>
                                 </tr>
                                 @endforeach
@@ -98,7 +94,6 @@
                         </table>
                         {{ $data->links() }}
                     </div>
-                    
                 </div>
             </div>
             

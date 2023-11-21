@@ -33,7 +33,9 @@
                 <div class="alert alert-success">
                     {{ session('status') }}
                 </div>
+                
                 @endif
+                
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-4 offset-md-4">
@@ -59,6 +61,13 @@
                         <div class="pull-left">
                             <strong>Monitoring Kandang</strong>
                         </div>
+                        <div class="pull-right">
+                        <a href="{{ url('download/'.$cariTanggal) }}" class="btn btn-success btn-sm">
+                            <i class="fa fa-download">  Unduh Data Excel</i>
+                        </a>
+                        
+                        
+                        </div>
                     </div>
                     <div class="card-body table-responsive">
                         <table class="table table-bordered">
@@ -70,13 +79,13 @@
                                     <th>Kadar Gas Ammonia</th>
                                     <th>Waktu</th>
                                     <th>kelas</th>
-                                    <th>action</th>
+                                    <th>{{ $cariTanggal }}</th>
                                 </tr>   
                             <tread>
                             <tbody>
                                 @foreach($data as $key => $item)
                                 <tr>
-                                <td>{{ $data->firstItem() + $key }}</td>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $item->suhu }} Derajat Celsius</td>
                                 <td>{{ $item->kelembaban }} %</td>
                                 <td>{{ $item->ammonia }} ppm</td>
@@ -96,9 +105,8 @@
                               
                             </tbody>
                         </table>
-                        {{ $data->links() }}
+                        
                     </div>
-                    
                 </div>
             </div>
             

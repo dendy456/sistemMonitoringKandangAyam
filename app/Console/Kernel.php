@@ -26,7 +26,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('KirimData')->everyMinute();
+        $schedule->command('cron:log')->everyMinute();
     }
 
     /**

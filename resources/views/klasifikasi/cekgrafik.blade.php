@@ -1,140 +1,192 @@
 <?php  
 
 
-//suhu
-$url = "https://backend.thinger.io/v3/users/KelasKilat/devices/KandangAyam_Bantuas/resources/temp";
-$headers = [
-    "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI1NjYxNDMsImlhdCI6MTY5MjU1ODk0Mywicm9sZSI6InVzZXIiLCJ1c3IiOiJLZWxhc0tpbGF0In0.NKkRF0Mdh73xbPH4XIAz70qKjduNeDJgzRgtTXSNyFI"
-];
+// //suhu
+// $url = "https://backend.thinger.io/v3/users/KelasKilat/devices/KandangAyam_Bantuas/resources/temp";
+// $headers = [
+//     "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI1NjYxNDMsImlhdCI6MTY5MjU1ODk0Mywicm9sZSI6InVzZXIiLCJ1c3IiOiJLZWxhc0tpbGF0In0.NKkRF0Mdh73xbPH4XIAz70qKjduNeDJgzRgtTXSNyFI"
+// ];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+// $ch = curl_init($url);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$response = curl_exec($ch);
-curl_close($ch);
+// $response = curl_exec($ch);
+// curl_close($ch);
 
-$suhuValue = json_decode($response, true);
+// $suhuValue = json_decode($response, true);
 
-$suhu = number_format($suhuValue, 2);
+// $suhu = number_format($suhuValue, 2);
 
-//kelembaban
-$url = "https://backend.thinger.io/v3/users/KelasKilat/devices/KandangAyam_Bantuas/resources/hum";
-$headers = [
-    "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI1NjYxNDMsImlhdCI6MTY5MjU1ODk0Mywicm9sZSI6InVzZXIiLCJ1c3IiOiJLZWxhc0tpbGF0In0.NKkRF0Mdh73xbPH4XIAz70qKjduNeDJgzRgtTXSNyFI"
-];
+// //kelembaban
+// $url = "https://backend.thinger.io/v3/users/KelasKilat/devices/KandangAyam_Bantuas/resources/hum";
+// $headers = [
+//     "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI1NjYxNDMsImlhdCI6MTY5MjU1ODk0Mywicm9sZSI6InVzZXIiLCJ1c3IiOiJLZWxhc0tpbGF0In0.NKkRF0Mdh73xbPH4XIAz70qKjduNeDJgzRgtTXSNyFI"
+// ];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+// $ch = curl_init($url);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$response = curl_exec($ch);
-curl_close($ch);
+// $response = curl_exec($ch);
+// curl_close($ch);
 
-$kelembabanValue = json_decode($response, true);
+// $kelembabanValue = json_decode($response, true);
 
-$kelembaban = number_format($kelembabanValue, 2);
+// $kelembaban = number_format($kelembabanValue, 2);
 
-//ammonia
-$url = "https://backend.thinger.io/v3/users/KelasKilat/devices/KandangAyam_Bantuas/resources/NH3";
-$headers = [
-    "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI1NjYxNDMsImlhdCI6MTY5MjU1ODk0Mywicm9sZSI6InVzZXIiLCJ1c3IiOiJLZWxhc0tpbGF0In0.NKkRF0Mdh73xbPH4XIAz70qKjduNeDJgzRgtTXSNyFI"
-];
+// //ammonia
+// $url = "https://backend.thinger.io/v3/users/KelasKilat/devices/KandangAyam_Bantuas/resources/NH3";
+// $headers = [
+//     "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2OTI1NjYxNDMsImlhdCI6MTY5MjU1ODk0Mywicm9sZSI6InVzZXIiLCJ1c3IiOiJLZWxhc0tpbGF0In0.NKkRF0Mdh73xbPH4XIAz70qKjduNeDJgzRgtTXSNyFI"
+// ];
 
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+// $ch = curl_init($url);
+// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+// curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
-$response = curl_exec($ch);
-curl_close($ch);
+// $response = curl_exec($ch);
+// curl_close($ch);
 
-$ammoniaValue = json_decode($response, true);
+// $ammoniaValue = json_decode($response, true);
 
-$ammonia = number_format($ammoniaValue, 2);
-
-
+// $ammonia = number_format($ammoniaValue, 2);
 
 
-$dataUji= [$suhu,$kelembaban,$ammonia];
+
+// Contoh data Anda (gantilah dengan data Anda sendiri)
+// $data = array(
+//     'suhu' => array(25, 30, 35, 28, 32),
+//     'kelembaban' => array(60, 55, 40, 75, 50),
+//     'ammonia' => array(0.1, 0.05, 0.2, 0.08, 0.15),
+//     'kelas' => array('A', 'B', 'C', 'A', 'B')
+// );
+
+// // Fungsi untuk melakukan normalisasi Min-Max
+// function min_max_normalization($data) {
+//     $min = min($data);
+//     $max = max($data);
+
+//     $normalized_data = array();
+//     foreach ($data as $value) {
+//         $normalized_value = ($value - $min) / ($max - $min);
+//         $normalized_data[] = $normalized_value;
+//     }
+
+//     return $normalized_data;
+// }
+
+// // Normalisasi Min-Max untuk kolom suhu, kelembaban, dan ammonia
+// $suhu_normalized = min_max_normalization($data['suhu']);
+// $kelembaban_normalized = min_max_normalization($data['kelembaban']);
+// $ammonia_normalized = min_max_normalization($data['ammonia']);
+// $kelas_normalized = min_max_normalization($data['kelas']);
+
+// // Hasil normalisasi
+// echo "Suhu Normalized: " . implode(', ', $suhu_normalized) . "\n";
+// echo "Kelembaban Normalized: " . implode(', ', $kelembaban_normalized) . "\n";
+// echo "Ammonia Normalized: " . implode(', ', $ammonia_normalized) . "\n";
+// echo "kelas Normalized: " . implode(', ', $kelas_normalized) . "\n";
+
+// Data kelas tidak perlu dinormalisasi karena itu adalah data kategorikal.
 
 
-function euclideanDistance($data1, $data2)
-{
-    $sum = 0;
-    for ($i = 0; $i < count($data1); $i++) {
-        $sum += pow(($data1[$i] - $data2[$i]), 2);
-    }
-    return sqrt($sum);
-}
 
-// Fungsi untuk menghitung kelas terbanyak dari tetangga terdekat
-function getMostFrequentClass($classes)
-{
-    $classCounts = array_count_values($classes);
-    arsort($classCounts);
-    return array_keys($classCounts)[0];
-}
 
-// Data uji
-$testData = array( $dataUji );
+// $dataUji= [$suhu,$kelembaban,$ammonia];
+
+
+// function euclideanDistance($data1, $data2)
+// {
+//     $sum = 0;
+//     for ($i = 0; $i < count($data1); $i++) {
+//         $sum += pow(($data1[$i] - $data2[$i]), 2);
+//     }
+//     return sqrt($sum);
+// }
+
+// // Fungsi untuk menghitung kelas terbanyak dari tetangga terdekat
+// function getMostFrequentClass($classes)
+// {
+//     $classCounts = array_count_values($classes);
+//     arsort($classCounts);
+//     return array_keys($classCounts)[0];
+// }
+
+// // Data uji
+// $testData = array( $dataUji );
     
 
-// K value
-$k = 3;
+// // K value
+// $k = 3;
 
 
-    // Membaca data training dari hasil query
-    $trainingData = $dataTraining;
+//     // Membaca data training dari hasil query
+//     $trainingData = $dataTraining;
     
-    // Hitung jarak antara data uji dan data training
-    $distances = array();
-    foreach ($trainingData as $train) {
-        $dist = euclideanDistance(array_slice($train, 0, -1), end($testData));
-        $distances[] = array($train, $dist);
-    }
+//     // Hitung jarak antara data uji dan data training
+//     $distances = array();
+//     foreach ($trainingData as $train) {
+//         $dist = euclideanDistance(array_slice($train, 0, -1), end($testData));
+//         $distances[] = array($train, $dist);
+//     }
 
-    // Urutkan jarak dari yang terkecil
-    usort($distances, function ($a, $b) {
-        return $a[1] <=> $b[1];
-    });
+//     // Urutkan jarak dari yang terkecil
+//     usort($distances, function ($a, $b) {
+//         return $a[1] <=> $b[1];
+//     });
 
-    // Ambil k tetangga terdekat
-    $neighbors = array_slice($distances, 0, $k);
+//     // Ambil k tetangga terdekat
+//     $neighbors = array_slice($distances, 0, $k);
 
-    // Ambil kelas dari tetangga terdekat
-    $neighborClasses = array();
-    foreach ($neighbors as $neighbor) {
-        $neighborClasses[] = $neighbor[0][3];
-    }
+//     // Ambil kelas dari tetangga terdekat
+//     $neighborClasses = array();
+//     foreach ($neighbors as $neighbor) {
+//         $neighborClasses[] = $neighbor[0][3];
+//     }
 
-    // Prediksi kelas data uji berdasarkan kelas terbanyak dari tetangga terdekat
-    $predictedClass = getMostFrequentClass($neighborClasses);
-    echo $predictedClass;
+//     // Prediksi kelas data uji berdasarkan kelas terbanyak dari tetangga terdekat
+//     $predictedClass = getMostFrequentClass($neighborClasses);
+//     echo $predictedClass;
 
 ?>
-<div class="animated fadeIn">
-              
-                @if ($predictedClass == 'Ideal')
-                <div class="alert alert-success">
-                <span class="badge badge-pill badge-success"><?= $predictedClass?></span>
-                Kandang Dalam Kondisi Yang Ideal
-                </div>
-                @elseif($predictedClass == "Baik")
-                <div class="alert alert-primary">
-                <span class="badge badge-pill badge-primary"><?= $predictedClass?></span>
-                Kandang Dalam Kondisi Baik
-                </div>
-                @elseif($predictedClass == "Buruk")
-                <div class="alert alert-warning">
-                <span class="badge badge-pill badge-warning"><?= $predictedClass?></span>
-                Kandang Dalam Kondisi Yang Buruk
-                </div>
-                @elseif($predictedClass == "Berbahaya")
-                <div class="alert alert-danger">
-                <span class="badge badge-pill badge-danger"><?= $predictedClass?></span>
-                Kandang Dalam Kondisi Dalam Bahaya, Segera Pergi Ke Kandang
-                </div>
-                @endif
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hasil Klasifikasi KNN</title>
+</head>
+<body>
+    <h1>Hasil Klasifikasi KNN</h1>
+
+    <form method="POST" action="{{ route('testing') }}">
+        @csrf
+        <label for="suhu">Suhu:</label>
+        <input type="number" name="suhu" required>
+
+        <label for="kelembaban">Kelembaban:</label>
+        <input type="number" name="kelembaban" required>
+
+        <label for="kelembaban">Ammonia:</label>
+        <input type="number" name="ammonia" required>
+
+        <label for="kelembaban">k:</label>
+        <input type="number" name="k" required>
+
+        <button type="submit">Prediksi</button>
+    </form>
+
+    @if(isset($kelas_prediksi))
+    <p>Hasil Prediksi: {{ $kelas_prediksi }}</p></br>
+    <p>Hasil K: {{ $k }}</p></br>
+
+    
+    <p>Hasil suhu: {{ $suhu }}</p></br>
+    <p>Hasil kelembaban: {{ $kelembaban }}</p></br>
+    <p>Hasil ammonia: {{ $ammonia }}</p></br>
+               
+    @endif
+</body>
+</html>
+
 
    

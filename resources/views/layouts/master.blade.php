@@ -42,9 +42,9 @@
                     <li>
                         <a href="{{ url('/main') }}"> <i class="menu-icon fa fa-home"></i>Home </a>
                     </li>
-                    <!-- <li>
-                        <a href="{{ url('monitoring') }}"> <i class="menu-icon fa fa-table"></i>Data Monitoring</a>
-                    </li> -->
+                    <li>
+                        <a href="{{ url('manajemen') }}"> <i class="menu-icon ti-clipboard"></i>Manajemen Kandang</a>
+                    </li>
                     <li>
                         <a href="{{ url('user') }}"> <i class="menu-icon fa fa-user"></i>Data User</a>
                     </li>
@@ -61,9 +61,6 @@
             <div class="header-menu">
                 <div class="col-sm-7">
                     <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
-                    <div class="header-left">
-                        <button class="search-trigger"><i class="fa fa-search"></i></button>
-                    </div>
                 </div>
             </div>
 

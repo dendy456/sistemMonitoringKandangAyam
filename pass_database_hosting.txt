@@ -1,0 +1,9 @@
+username = kane6857_laravel
+password = *J~;XZCitF7s
+
+command cronjob = /usr/local/bin/php /home/kane6857/laravel/artisan cron:log >> /dev/null 2>&1
+
+
+username: kane6857_toko
+pass: FlfI5E2q~vDx
+db_name : kane6857_tokoa2

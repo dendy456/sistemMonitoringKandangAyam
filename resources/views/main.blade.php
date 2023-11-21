@@ -26,6 +26,7 @@
 @section('content')
             <?php
             $user = App\Models\User::count();
+            $periode = App\Models\Manajemen::count();
             ?>
             <div class="animated fadeIn">
                 @if (session('status'))
@@ -66,7 +67,8 @@
                                     <div class="stat-content">
                                         <div class="text-left dib">
                                             <div class="stat-heading">Periode Ayam</div>
-                                            <div class="stat-text">{{ date('Y-m-d')  }}</div>
+                                            <div class="stat-text">Tahun {{ date('Y')  }}</div>
+                                            <div class="stat-text">{{ $periode  }} Periode</div>
                                         </div>
                                     </div>
                                 </div>

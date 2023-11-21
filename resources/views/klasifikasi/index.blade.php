@@ -29,12 +29,12 @@
 
 
 
-<div class="content mt-3">
-<div class="animated fadeIn">
+<!-- <div class="content mt-3">
+<div class="animated fadeIn" >
               
               @if ($kelas == 'Ideal')
               <div class="alert alert-success">
-              <span class="badge badge-pill badge-success"><?= $kelas?></span>
+              <span class="badge badge-pill badge-success"></span>
               Kandang Dalam Kondisi Yang Ideal
               </div>
               @elseif($kelas == "Baik")
@@ -54,7 +54,7 @@
               </div>
               @endif
 </div>
-</div>
+</div> -->
 
 
 
@@ -223,133 +223,6 @@
 
 
 
-<!-- <script>
-    const ctx = document.getElementById('myChart').getContext('2d');
-
-    // Data awal
-    let labels = [];
-    let suhuData = [];
-    let kelembabanData = [];
-    let ammoniaData = [];
-
-    const chart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Suhu',
-                data: suhuData,
-                borderWidth: 1
-            }, {
-                label: 'Kelembaban',
-                data: kelembabanData,
-                borderWidth: 1
-            }, {
-                label: 'Ammonia',
-                data: ammoniaData,
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Fungsi untuk menambah data baru dan memperbarui grafik
-    function addDataSuhu(label, suhu) {
-        labels.push(label);
-        suhuData.push(suhu);
-
-        if (labels.length > 10) {
-            labels.shift();
-            suhuData.shift();
-        }
-
-        chart.update();
-    }
-    function addDataKelembaban(kelembaban) {
-        kelembabanData.push(kelembaban);
-
-        if (labels.length > 10) {
-            kelembabanData.shift();
-        }
-
-        chart.update();
-    }
-    function addDataAmmonia(ammonia) {
-        ammoniaData.push(ammonia);
-
-        if (labels.length > 10) {
-            ammoniaData.shift();
-        }
-
-        chart.update();
-    } -->
-
-    <!-- // // Fungsi untuk mengambil data dari resource API
-    // function fetchSuhu(url, label) {
-    //     fetch(url, {
-    //         headers: {
-    //             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJLYW5kYW5nQXlhbV9CYW50dWFzIiwiaWF0IjoxNjkyNjgxNTQ5LCJqdGkiOiI2NGU0NDU0ZGE2YTIyNWY3ODAwNzI1YzMiLCJzdnIiOiJhcC1zb3V0aGVhc3QuYXdzLnRoaW5nZXIuaW8iLCJ1c3IiOiJLZWxhc0tpbGF0In0.weXlqGTTwe2PfSYKK-0OBLhQodAmBB9sLiCG1aTvTJc"
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         const suhu = parseFloat(data);  // Ubah data ke tipe float jika diperlukan
-    //         // Data kelembaban dan ammonia juga bisa diambil dan dimasukkan ke sini
-    //         addDataSuhu(label, suhu);  // 0, 0 adalah contoh data kelembaban dan ammonia
-    //     })
-    //     .catch(error => {
-    //         console.error("Error fetching data:", error);
-    //     });
-    // }
-    // function fetchKelembaban(url) {
-    //     fetch(url, {
-    //         headers: {
-    //             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJLYW5kYW5nQXlhbV9CYW50dWFzIiwiaWF0IjoxNjkyNjgxNTQ5LCJqdGkiOiI2NGU0NDU0ZGE2YTIyNWY3ODAwNzI1YzMiLCJzdnIiOiJhcC1zb3V0aGVhc3QuYXdzLnRoaW5nZXIuaW8iLCJ1c3IiOiJLZWxhc0tpbGF0In0.weXlqGTTwe2PfSYKK-0OBLhQodAmBB9sLiCG1aTvTJc"
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         const kelembaban = parseFloat(data); // Ubah data ke tipe float jika diperlukan
-    //         // Data kelembaban dan ammonia juga bisa diambil dan dimasukkan ke sini
-    //         addDataKelembaban(kelembaban);  // 0, 0 adalah contoh data kelembaban dan ammonia
-    //     })
-    //     .catch(error => {
-    //         console.error("Error fetching data:", error);
-    //     });
-    // }
-    // function fetchAmmonia(url) {
-    //     fetch(url, {
-    //         headers: {
-    //             "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJLYW5kYW5nQXlhbV9CYW50dWFzIiwiaWF0IjoxNjkyNjgxNTQ5LCJqdGkiOiI2NGU0NDU0ZGE2YTIyNWY3ODAwNzI1YzMiLCJzdnIiOiJhcC1zb3V0aGVhc3QuYXdzLnRoaW5nZXIuaW8iLCJ1c3IiOiJLZWxhc0tpbGF0In0.weXlqGTTwe2PfSYKK-0OBLhQodAmBB9sLiCG1aTvTJc"
-    //         }
-    //     })
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         const ammonia = parseFloat(data); // Ubah data ke tipe float jika diperlukan
-    //         // Data kelembaban dan ammonia juga bisa diambil dan dimasukkan ke sini
-    //         addDataAmmonia(ammonia);  // 0, 0 adalah contoh data kelembaban dan ammonia
-    //     })
-    //     .catch(error => {
-    //         console.error("Error fetching data:", error);
-    //     });
-    // }
-
-    // Memanggil fetchData setiap 5 detik untuk masing-masing resource API
-//     setInterval(() => {
-//         const label = new Date().toLocaleTimeString();
-//         const labels = {!! json_encode(array_reverse($label)) !!};
-//         const suhuData = {!! json_encode(array_reverse($suhu)) !!};
-//         const kelembabanData = {!! json_encode(array_reverse($kelembaban)) !!};
-//         const ammoniaData = {!! json_encode(array_reverse($ammonia)) !!};
-//         addDataKelembaban(kelembaban);
-//     }, 60000); // Setiap 5 detik (5000 milidetik)
-// </script> -->
 
 
 <!-- 

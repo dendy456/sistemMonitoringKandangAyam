@@ -87,6 +87,19 @@ class KlasifikasiController extends Controller
     
     }
 
+    public function coba(Request $request)
+    {
+        $datatraining = DataTraining::all();
+        
+        $dataUji= [];
+        $dataTraining= [];
+        foreach($datatraining as $dt){
+            $Training=[$dt->suhu,$dt->kelembaban,$dt->ammonia,$dt->kelas];
+            $dataTraining[]=$Training;
+        }
+        return view('klasifikasi.cekgrafik', ['dataTraining' => $dataTraining]);
+    }
+
     
     
 

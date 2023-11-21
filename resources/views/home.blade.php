@@ -54,7 +54,22 @@
                                 </div>
                             </div>
                         </div>
-
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="stat-widget-four">
+                                    <div class="stat-icon dib">
+                                        <i class="ti-calendar text-muted"></i>
+                                    </div>
+                                    <div class="stat-content">
+                                        <div class="text-left dib">
+                                            <div class="stat-heading">Umur Ayam</div>
+                                            <div class="stat-text">{{ date('Y-m-d')  }}</div>
+                                            <div class="stat-text">{{ $umur  }} Hari</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

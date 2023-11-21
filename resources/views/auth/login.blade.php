@@ -11,8 +11,9 @@
     <meta name="description" content="Sufee Admin - HTML5 Admin Template">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" href="apple-icon.png">
-    <link rel="shortcut icon" href="favicon.ico">
+    
+    <link rel="apple-touch-icon" href="{{ asset('style/images/unmul.png') }}">
+    <link rel="shortcut icon" href="{{ asset('style/images/unmul.png') }}">
 
     <link rel="stylesheet" href="{{ asset ('style/assets/css/normalize.css') }}">
     <link rel="stylesheet" href="{{ asset ('style/assets/css/bootstrap.min.css') }}">
@@ -66,20 +67,18 @@
                                 <input type="checkbox">
                                 {{ __('Remember Me') }}
                             </label>
-                            <label class="pull-right">
+                            <!-- <label class="pull-right">
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
-                            </label>
+                            </label> -->
 
                         </div></br></br></br>
                         <button type="submit" class="btn btn-success btn-flat m-b-30 m-t-30">Sign in</button>
                         </br></br>
-                        <div class="register-link m-t-15 text-center">
-                            <p>Don't have account ? <a href="{{ route('register') }}"> Sign Up Here</a></p>
-                        </div>
+                        
                     </form>
                 </div>
             </div>
